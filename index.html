@@ -18,9 +18,47 @@
       </nav>
     </header>
     <main>
-      <div>
-        <script src="./JavaScript/app.js"></script>
-      </div>
+      <section>
+        <form id="form">
+          <fieldset>
+            <legend>Employee Registration</legend>
+            <label for="fullName">Full name:</label>
+            <input type="text" id="fullName" required /><br />
+            <label for="department">Department:</label>
+            <select name="department" id="department">
+              <option value="Administration" selected>Administration</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Development">Development</option>
+              <option value="Finance">Finance</option></select
+            ><br />
+            <label for="level">Level:</label>
+            <select name="level" id="level">
+              <option value="Junior" selected>Junior</option>
+              <option value="Mid-Senior">Mid-Senior</option>
+              <option value="Senior">Senior</option></select
+            ><br />
+            <label for="image">Image URL:</label>
+            <input type="text" id="image" required /><br />
+            <input type="submit" value="Register" />
+          </fieldset>
+        </form>
+      </section>
+      <section>
+        <h2>Administration</h2>
+        <div id="admiEmps" class="cardCon"></div>
+      </section>
+      <section>
+        <h2>Marketing</h2>
+        <div id="marEmps" class="cardCon"></div>
+      </section>
+      <section>
+        <h2>Development</h2>
+        <div id="devEmps" class="cardCon"></div>
+      </section>
+      <section>
+        <h2>Finance</h2>
+        <div id="finEmps" class="cardCon"></div>
+      </section>
     </main>
     <footer>
       <div id="social">
@@ -36,5 +74,6 @@
         </p>
       </div>
     </footer>
+    <script src="./JavaScript/app.js"></script>
   </body>
 </html>
