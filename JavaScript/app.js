@@ -1,13 +1,8 @@
 "use strict";
-//
-const allEmployee = [];
-//
+
 let baseId = 1000;
-//
 const form = document.getElementById("form");
-// form submit event Listener
-form.addEventListener("submit", submitHandler);
-// emp constructor
+
 function Employee(id, fullName, department, level, image) {
   this.id = id;
   this.fullName = fullName;
@@ -16,9 +11,9 @@ function Employee(id, fullName, department, level, image) {
   this.image = image;
   this.salary = this.calSalary();
   this.netSalary = this.calNetSalary();
-  allEmployee.push(this);
+  this.saveEmployee();
 }
-// calculating the salary
+
 Employee.prototype.calSalary = function () {
   let salary = 0;
   if (this.level == "Junior") {
@@ -32,11 +27,15 @@ Employee.prototype.calSalary = function () {
   }
   return salary;
 };
-// employee net salary
+
 Employee.prototype.calNetSalary = function () {
   return this.salary - this.salary * 0.075;
 };
-//
+
+function randomSalary(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 Employee.prototype.render = function () {
   // create a card
   const card = document.createElement("div");
@@ -70,11 +69,7 @@ Employee.prototype.render = function () {
   // append card to document
   departmentFilter(this.department, card);
 };
-// generating a random number
-function randomSalary(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-// check for Department
+
 function departmentFilter(empDep, card) {
   const admiEmps = document.getElementById("admiEmps");
   const marEmps = document.getElementById("marEmps");
@@ -96,11 +91,84 @@ function departmentFilter(empDep, card) {
       break;
   }
 }
-// ID Generator
+
+Employee.prototype.saveEmployee = function () {
+  localStorage.setItem(`Employee${this.id}`, JSON.stringify(this));
+};
+
+const emp1 = new Employee(
+  IdGenerator(),
+  "Ghazi Samer",
+  "Administration",
+  "Senior",
+  "../assets/Ghazi.jpg"
+);
+const emp2 = new Employee(
+  IdGenerator(),
+  "Lana Ali",
+  "Finance",
+  "Senior",
+  "../assets/Lana.jpg"
+);
+const emp3 = new Employee(
+  IdGenerator(),
+  "Tamara Ayoub",
+  "Marketing",
+  "Senior",
+  "../assets/Tamara.jpg"
+);
+const emp4 = new Employee(
+  IdGenerator(),
+  "Safi Walid",
+  "Administration",
+  "Mid-Senior",
+  "../assets/Safi.jpg"
+);
+const emp5 = new Employee(
+  IdGenerator(),
+  "Omar Zaid",
+  "Development",
+  "Senior",
+  "../assets/Omar.jpg"
+);
+const emp6 = new Employee(
+  IdGenerator(),
+  "Rana Saleh",
+  "Development",
+  "Junior",
+  "../assets/Rana.jpg"
+);
+const emp7 = new Employee(
+  IdGenerator(),
+  "Hadi Ahmad",
+  "Finance",
+  "Senior",
+  "../assets/Hadi.jpg"
+);
+
+function getEmployees() {
+  for (let i = 0; i < localStorage.length; i++) {
+    let lSEmp = JSON.parse(localStorage.getItem(`Employee${1001 + i}`));
+    let newEmp = new Employee(
+      lSEmp.id,
+      lSEmp.fullName,
+      lSEmp.department,
+      lSEmp.level,
+      lSEmp.image
+    );
+    newEmp.render();
+    baseId = lSEmp.id;
+  }
+}
+
+getEmployees();
+
 function IdGenerator() {
   return ++baseId;
 }
-// event Handler
+
+form.addEventListener("submit", submitHandler);
+
 function submitHandler(event) {
   event.preventDefault();
   const fullName = event.target.fullName.value;
@@ -116,17 +184,4 @@ function submitHandler(event) {
     image
   );
   newEmp.render();
-}
-
-//
-const emp1 = new Employee(IdGenerator(), "Ghazi Samer", "Administration", "Senior", '../assets/Ghazi.jpg');
-const emp2 = new Employee(IdGenerator(), "Lana Ali", "Finance Senior", "Senior", '../assets/Lana.jpg');
-const emp3 = new Employee(IdGenerator(), "Tamara Ayoub", "Marketing", "Senior", '../assets/Tamara.jpg');
-const emp4 = new Employee(IdGenerator(), "Safi Walid", "Administration", "Mid-Senior", '../assets/Safi.jpg');
-const emp5 = new Employee(IdGenerator(), "Omar Zaid", "Development", "Senior", '../assets/Omar.jpg');
-const emp6 = new Employee(IdGenerator(), "Rana Saleh", "Development", "Junior", '../assets/Rana.jpg');
-const emp7 = new Employee(IdGenerator(), "Hadi Ahmad", "Finance", "Senior", '../assets/Hadi.jpg');
-
-for (let i = 0; i < allEmployee.length; i++) {
-  allEmployee[i].render();
 }

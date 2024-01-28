@@ -4,125 +4,126 @@
 40A2D8 links
 F0EDCF bg
 */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
-body{
-    background-color: #F0EDCF;
+body {
+  background-color: #f0edcf;
 }
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    height: 15vh;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  height: 15vh;
 }
-header div a{
-    text-decoration: none;
-    color: #0B60B0;
+header div a {
+  text-decoration: none;
+  color: #0b60b0;
 }
-header nav{
-    margin-right: 100px;
+header nav {
+  margin-right: 100px;
 }
-header nav ul li{
-    list-style: none;
+header nav ul li {
+  list-style: none;
 }
-header nav ul li a{
-    text-decoration: none;
-    font-size: 18px;
-    text-decoration-line: underline;
-    color: #40A2D8;
+header nav ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  text-decoration-line: underline;
+  color: #40a2d8;
 }
 
-footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px 20px;
-    height: 10vh;
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 20px;
+  height: 10vh;
 }
-footer #social a{
-    display: inline-block;
-    margin: 0 10px;
-    color: #40A2D8;
-    text-decoration: none;
+footer #social a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #40a2d8;
+  text-decoration: none;
 }
-footer #right p{
-    color: #000000;
+footer #right p {
+  color: #000000;
 }
-footer #right a{
-    color: #40A2D8;
-    text-decoration: none;
+footer #right a {
+  color: #40a2d8;
+  text-decoration: none;
 }
 /* form */
-#form{
-    width: 40%;
-    margin: 20px auto;
-    background-color: rgb(233, 233, 208);
-    box-shadow: 5px 5px 10px 10px rgb(233, 233, 208);
+#form {
+  width: 40%;
+  margin: 20px auto;
+  background-color: rgb(233, 233, 208);
+  box-shadow: 5px 5px 10px 10px rgb(233, 233, 208);
 }
-#form legend{
-    font-size: 24px;
-    color: #0B60B0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+#form legend {
+  font-size: 24px;
+  color: #0b60b0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-#form fieldset{
-    border-radius: 10px;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    padding: 30px 0;
+#form fieldset {
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 30px 0;
 }
-#form input, #form select{
-    width: 40%;
-    border-radius: 5px;
-    height: 20px;
+#form input,
+#form select {
+  width: 40%;
+  border-radius: 5px;
+  height: 20px;
 }
-#form input[type='submit']{
-    background-color: #40A2D8;
-    height: 25px;
+#form input[type="submit"] {
+  background-color: #40a2d8;
+  height: 25px;
 }
 /* cards  */
-section h2{
-    font-size: 28px;
-    padding-left: 40px;
-    color: #0B60B0;
+section h2 {
+  font-size: 28px;
+  padding-left: 40px;
+  color: #0b60b0;
 }
-.cardCon{
-    display: flex;
-    flex-flow: wrap row;
-    align-items: center;
-    gap: 35px;
-    padding: 40px 80px;
+.cardCon {
+  display: flex;
+  flex-flow: wrap row;
+  align-items: center;
+  gap: 35px;
+  padding: 40px 80px;
 }
-.cardCon div{
-    width: 300px;
-    background-color: #40A2D8;
-    padding: 10px 20px;
-    text-align: center;
-    border-radius: 10px;
-    margin-top: 15px;
+.cardCon div {
+  width: 300px;
+  background-color: #40a2d8;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 15px;
 }
-.cardCon div img{
-    display: block;
-    width: 240px;
-    margin: auto;
-    margin-bottom: 15px;
-    border-radius: 10px;
+.cardCon div img {
+  display: block;
+  width: 240px;
+  margin: auto;
+  margin-bottom: 15px;
+  border-radius: 10px;
 }
-.cardCon div p{
-    font-size: 16px;
-    padding: 5px 0;
-    color: #000000;
+.cardCon div p {
+  font-size: 16px;
+  padding: 5px 0;
+  color: #000000;
 }
-.cardCon div .small{
-    font-size: 12px;
+.cardCon div .small {
+  font-size: 12px;
 }
-.cardCon div .big{
-    font-size: 18px;
+.cardCon div .big {
+  font-size: 18px;
 }
